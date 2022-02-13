@@ -146,52 +146,60 @@
         </div>
         <div class="row justify-content-center">
           <div class="col-md-8">
-            <form>
+            <form name="pendaftaran-sma-it-an-nur">
               <div class="mb-3">
-                <label for="Nama" class="form-label">Nama Lengkap</label>
-                <input type="text" class="form-control" id="nama" aria-describedby="nama" />
+                <label for="nama lengkap" class="form-label">Nama Lengkap (sesuai KK)</label>
+                <input type="text" class="form-control" id="nama lengkap" aria-describedby="nama" name="nama lengkap" />
       
               <div class="mb-3">
-                <label for="Nama" class="form-label">Jenis Kelamin</label>
-                <input type="text" class="form-control" id="nama" aria-describedby="nama" />
+                <label for="jenis kelamin" class="form-label">Jenis Kelamin</label>
+                <input type="text" class="form-control" id="jenis kelamin" aria-describedby="nama" name="jenis kelamin"/>
       
               <div class="mb-3">
-                <label for="Nama" class="form-label">NIK</label>
-                <input type="text" class="form-control" id="nama" aria-describedby="nama" />
+                <label for="nik" class="form-label">NIK</label>
+                <input type="number" class="form-control" id="nik" aria-describedby="nama" name="nik"/>
       
               <div class="mb-3">
-                <label for="Nama" class="form-label">NISN</label>
-                <input type="text" class="form-control" id="nama" aria-describedby="nama" />
+                <label for="nisn" class="form-label">NISN</label>
+                <input type="number" class="form-control" id="nisn" aria-describedby="nama" name="nisn"/>
       
               <div class="mb-3">
-                <label for="Nama" class="form-label">Tempat Lahir</label>
-                <input type="text" class="form-control" id="nama" aria-describedby="nama" />
+                <label for="tempat lahir" class="form-label">Tempat Lahir</label>
+                <input type="text" class="form-control" id="tempat lahir" aria-describedby="nama" name="tempat lahir"/>
       
               <div class="mb-3">
-                <label for="Nama" class="form-label">Tanggal Lahir</label>
-                <input type="text" class="form-control" id="nama" aria-describedby="nama" />
+                <label for="tanggal lahir" class="form-label">Tanggal Lahir</label>
+                <input type="date" class="form-control" id="tanggal lahir" aria-describedby="nama" name="tanggal lahir"/>
       
               <div class="mb-3">
-                <label for="Nama" class="form-label">Nama Ibu Kandung</label>
-                <input type="text" class="form-control" id="nama" aria-describedby="nama" />
+                <label for="nama ibu kandung" class="form-label">Nama Ibu Kandung</label>
+                <input type="text" class="form-control" id="nama ibu kandung" aria-describedby="nama" name="nama ibu kandung"/>
       
               <div class="mb-3">
-                <label for="Nama" class="form-label">Nama Ayah</label>
-                <input type="text" class="form-control" id="nama" aria-describedby="nama" />
+                <label for="nama ayah" class="form-label">Nama Ayah</label>
+                <input type="text" class="form-control" id="nama ayah" aria-describedby="nama" name="nama ayah"/>
       
               <div class="mb-3">
-                <label for="Nama" class="form-label">Alamat</label>
-                <input type="text" class="form-control" id="nama" aria-describedby="nama" />
+                <label for="alamat" class="form-label">Alamat</label>
+                <input type="text" class="form-control" id="alamat" aria-describedby="nama" name="alamat"/>
       
               <div class="mb-3">
-                <label for="Nama" class="form-label">Nomor HP/WA</label>
-                <input type="text" class="form-control" id="nama" aria-describedby="nama" />
+                <label for="nomor hp/wa" class="form-label">Nomor HP/WA</label>
+                <input type="number" class="form-control" id="nomor hp/wa" aria-describedby="nama" name="nomer hp/wa"/>
       
               <div class="mb-3">
-                <label for="email" class="form-label">Email </label>
-                <input type="email" class="form-control" id="email" aria-describedby="email" />
+                <label for="asal sekolah" class="form-label">Asal Sekolah</label>
+                <input type="text" class="form-control" id="asal sekolah" aria-describedby="nama" name="asal sekolah"/>
                
-              <button type="submit" class="btn btn-primary">Kirim</button>
+              <button type="submit" class="btn btn-primary btn-kirim">Kirim</button>
+              <button class="btn btn-primary btn-loading d-none" type="button" disabled>
+                <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                Loading...
+              </button>
+              <div class="alert alert-warning alert-dismissible fade show d-none my-alert" role="alert">
+                <strong>Terimakasih!</strong> Pesan anda sudah kami terima.
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+              </div>
             </form>
           </div>
         </div>
@@ -216,5 +224,34 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
     -->
+
+    <script>
+      const scriptURL = 'https://script.google.com/macros/s/AKfycbyLn_5uwu_Ci9_dzlCDN9zEcLxAbPPvC3om_tVooP306knyG1qRSoLr-mFOtPAV1wtL/exec'
+      const form = document.forms['pendaftaran-sma-it-an-nur']
+      const btnKirim = document.querySelector('.btn-kirim')
+      const btnLoading = document.querySelector('.btn-loading')
+      const myAlert = document.querySelector('.my-alert')
+      
+    
+      form.addEventListener('submit', e => {
+        e.preventDefault()
+        // ketika tombol kirim diklik
+        // tampilkan tombol loading, hilangkan tombol kirim
+        btnLoading.classList.toggle('d-none');
+        btnKirim.classList.toggle('d-none');
+        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+          .then(response => {
+            // tampilkan tombol kirim, hilangkan tombol loading
+            btnLoading.classList.toggle('d-none');
+            btnKirim.classList.toggle('d-none');
+            // tampilkan alert
+            myAlert.classList.toggle('d-none');
+            // reset formnya
+            form.reset();
+            console.log('Success!', response)})
+          .catch(error => console.error('Error!', error.message))
+      })
+    </script>
+
   </body>
 </html>
