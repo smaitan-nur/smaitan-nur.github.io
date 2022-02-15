@@ -13,6 +13,11 @@
     <!-- My CSS -->
     <link rel="stylesheet" href="style.css" />
     <title>SMA IT AN-NUR</title>
+
+    <script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="floating-wpp.min.js"></script>
+    <link rel="stylesheet" href="floating-wpp.min.css">
+
   </head>
   <body id="home">
     <!-- Navbar -->
@@ -279,5 +284,20 @@
       })
     </script>
 
+<div id="myDiv"></div>
   </body>
+
+  <script type="text/javascript">
+    $(function () {
+      $('#myDiv').floatingWhatsApp({
+        phone: '083805408824',
+        popupMessage: 'Ada yang bisa kami bantu!',
+    message: "Assalamualaikum",
+    showPopup: true,
+    showOnIE: false,
+    headerTitle: 'Assalamualaikum',
+    position: 'right',
+      });
+    });
+  </script>
 </html>
